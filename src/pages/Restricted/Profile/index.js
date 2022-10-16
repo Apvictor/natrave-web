@@ -12,7 +12,7 @@ import DateSelect from "../../../components/DateSelect";
 function Profile() {
   const params = useParams();
   const navigate = useNavigate();
-  const [auth, setAuth] = useLocalStorage("auth");
+  const [auth, setAuth, removeAuth] = useLocalStorage("auth");
 
   const [currentDate, setCurrentDate] = useState(formatISO(new Date(2022, 10, 20)));
 
@@ -46,7 +46,7 @@ function Profile() {
   });
 
   const logout = () => {
-    setAuth({});
+    removeAuth();
     navigate('/login');
   }
 

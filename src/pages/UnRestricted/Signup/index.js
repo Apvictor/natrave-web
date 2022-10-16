@@ -34,7 +34,7 @@ function Signup() {
     validationSchema,
   });
 
-  return auth?.user?.id ? (
+  return auth ? (
     <Navigate to="/dashboard" replace={true} />
   ) : (
     <div>
